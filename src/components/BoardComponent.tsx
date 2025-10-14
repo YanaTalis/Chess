@@ -11,6 +11,7 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard }) => {
   return (
     <div className="board">
       {board.cells.map((row, index) => (
+        
         <React.Fragment key={index}>
           {row.map(cell => (
             <CellComponent cell={cell} key={cell.id}/>

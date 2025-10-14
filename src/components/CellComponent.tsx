@@ -6,7 +6,9 @@ interface CellProps {
 }
 
 const CellComponent: FC<CellProps> = ({ cell: Cell }) => {
-  return <div className={["cell", Cell.colour].join(' ')}></div>
+  return <div className={["cell", Cell.colour].join(' ')}>
+    {Cell.figure?.logo && < img src={Cell.figure.logo} alt=''/>}
+  </div>
 }
 
 export default CellComponent
