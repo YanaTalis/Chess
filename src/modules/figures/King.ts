@@ -5,10 +5,16 @@ import blackLogo from '../../assets/black-king.png'
 import whiteLogo from '../../assets/white-king.png'
 
 export class King extends Figure {
-    
   constructor(colour: Colours, cell: Cell) {
     super(colour, cell)
     this.logo = colour === Colours.BLACK ? blackLogo : whiteLogo
     this.name = FigureNames.KING
+  }
+
+  canMove(target: Cell): boolean {
+    if (!super.canMove(target)) {
+      return false
+    }
+    return true
   }
 }

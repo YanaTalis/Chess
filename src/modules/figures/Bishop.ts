@@ -5,10 +5,16 @@ import blackLogo from '../../assets/black-bishop.png'
 import whiteLogo from '../../assets/white-bishop.png'
 
 export class Bishop extends Figure {
-    
   constructor(colour: Colours, cell: Cell) {
     super(colour, cell)
     this.logo = colour === Colours.BLACK ? blackLogo : whiteLogo
     this.name = FigureNames.BISHOP
+  }
+
+  canMove(target: Cell): boolean {
+    if (!super.canMove(target)) {
+      return false
+    }
+    return true
   }
 }
