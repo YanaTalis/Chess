@@ -15,6 +15,14 @@ export class King extends Figure {
     if (!super.canMove(target)) {
       return false
     }
-    return true
+
+    const absX = Math.abs(target.x - this.cell.x)
+    const absY = Math.abs(target.y - this.cell.y)
+
+    if (absX <= 1 && absY <= 1) {
+      return true
+    }
+
+    return false
   }
 }
